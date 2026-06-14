@@ -8,8 +8,11 @@ const api = axios.create({
 });
 
 // User endpoints
-export const startSession = (selectedNumber) =>
-  api.post('/users/start', { selectedNumber });
+export const startSession = (selectedNumber, email) =>
+  api.post('/users/start', { selectedNumber, email });
+
+export const resumeSession = (email) =>
+  api.post('/users/resume', { email });
 
 export const getUserProgress = (userId) =>
   api.get(`/users/${userId}`);
