@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getGifts, adminAddGift, adminUpdateGift, adminDeleteGift } from '../../services/api';
-import './Admin.css';
+import './AdminEditGiftsPage.css';
 
 const AdminEditGiftsPage = () => {
   const [gifts, setGifts] = useState([]);

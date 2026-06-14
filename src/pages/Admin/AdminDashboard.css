@@ -1,0 +1,38 @@
+/* AdminDashboard.css – only layout and navigation, no global overrides */
+
+.admin-panel {
+  width: 100%;
+  padding: 2rem;
+}
+
+.admin-panel h1 {
+  font-size: 2.5rem;
+  color: #f0c040;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.admin-panel nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.admin-panel nav a {
+  background: #1f2833;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #c5c6c7;
+  transition: all 0.3s;
+  border: 2px solid #45a29e;
+  text-decoration: none;
+}
+
+.admin-panel nav a:hover {
+  background: #45a29e;
+  color: #0b0c10;
+  border-color: #66fcf1;
+  box-shadow: 0 0 15px rgba(102,252,241,0.4);
+}

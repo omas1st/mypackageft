@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { adminGetAllCards, adminAcceptCard, adminRejectCard } from '../../services/api';
-import './Admin.css';
+import './AdminCardPage.css';
 
 const AdminCardsPage = () => {
   const [cards, setCards] = useState([]);
