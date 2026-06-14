@@ -162,3 +162,60 @@
   background: #c5c6c7;
   color: #0b0c10;
 }
+
+/* ---------- New styles for email before start ---------- */
+
+.email-input-group {
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.email-input-group input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #45a29e;
+  border-radius: 8px;
+  background-color: #0b0c10;
+  color: #e0e0e0;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.email-input-group input:focus {
+  outline: none;
+  border-color: #66fcf1;
+  box-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
+}
+
+.email-input-group input.input-error {
+  border-color: #e74c3c;
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
+}
+
+.error-text {
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+/* Returning user / resume section */
+.returning-user {
+  margin-top: 2rem;
+  color: #c5c6c7;
+  font-size: 0.9rem;
+}
+
+.resume-btn {
+  background: none;
+  border: none;
+  color: #f39c12;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.resume-btn:hover {
+  color: #f1c40f;
+}

@@ -49,7 +49,8 @@ const AdminUsersPage = () => {
           {users.map((u) => (
             <tr key={u._id}>
               <td>{u.userDetails?.name || 'N/A'}</td>
-              <td>{u.userDetails?.email || 'N/A'}</td>
+              {/* Use top-level email first (set at registration), fallback to userDetails.email */}
+              <td>{u.email || u.userDetails?.email || 'N/A'}</td>
               <td>{u.giftWon?.name || 'Not spun'}</td>
               <td>{u.step}</td>
               <td><button onClick={() => handleViewUser(u._id)}>Edit</button></td>
@@ -62,12 +63,12 @@ const AdminUsersPage = () => {
         <div className="modal">
           <div className="modal-content">
             <h3>User Details</h3>
-            <p><strong>Name:</strong> {selectedUser.userDetails?.name}</p>
-            <p><strong>Email:</strong> {selectedUser.userDetails?.email}</p>
-            <p><strong>Phone:</strong> {selectedUser.userDetails?.phone}</p>
-            <p><strong>Country:</strong> {selectedUser.userDetails?.country}</p>
-            <p><strong>Address:</strong> {selectedUser.userDetails?.address}</p>
-            <p><strong>Gift:</strong> {selectedUser.giftWon?.name}</p>
+            <p><strong>Name:</strong> {selectedUser.userDetails?.name || 'Not provided yet'}</p>
+            <p><strong>Email:</strong> {selectedUser.email || selectedUser.userDetails?.email || 'N/A'}</p>
+            <p><strong>Phone:</strong> {selectedUser.userDetails?.phone || 'N/A'}</p>
+            <p><strong>Country:</strong> {selectedUser.userDetails?.country || 'N/A'}</p>
+            <p><strong>Address:</strong> {selectedUser.userDetails?.address || 'N/A'}</p>
+            <p><strong>Gift:</strong> {selectedUser.giftWon?.name || 'Not spun'}</p>
             <p><strong>Stage:</strong> {selectedUser.step}</p>
             <h4>Uploaded Cards</h4>
             {selectedUser.cards?.map((card, i) => (
