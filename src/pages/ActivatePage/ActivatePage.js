@@ -46,7 +46,7 @@ const ActivatePage = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [userId, cardStatus]); // re-run when cardStatus changes to stop polling when not pending
+  }, [userId, cardStatus]);
 
   const handleCardSubmit = async (cardData) => {
     setSubmitting(true);
@@ -62,7 +62,6 @@ const ActivatePage = () => {
   };
 
   const handleProceed = async () => {
-    // Update step to 'processing' before navigating
     try {
       await updateStep(userId, 'processing');
       updateUser({ ...user, step: 'processing' });
@@ -86,7 +85,7 @@ const ActivatePage = () => {
       {cardStatus === 'accepted' ? (
         <div>
           <p className="success-msg">Your activation card has been accepted!</p>
-          <button onClick={handleProceed}>Proceed to Processing</button>
+          <button className="proceed-btn" onClick={handleProceed}>Proceed to Processing</button>
         </div>
       ) : cardStatus === 'rejected' ? (
         <div>
