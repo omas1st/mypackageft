@@ -40,8 +40,11 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      <h1 className="main-title">GameSpin</h1>
-      <h2 className="sub-title">Pick a Lucky Number (1-30)</h2>
+      {/* Professional header container */}
+      <div className="header-section">
+        <h1 className="main-title">GiftSpin</h1>
+        <h2 className="sub-title">Pick a Lucky Number (1-30)</h2>
+      </div>
 
       <div className="number-grid">
         {Array.from({ length: 30 }, (_, i) => i + 1).map((num) => (
