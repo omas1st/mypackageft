@@ -1,0 +1,80 @@
+.wheel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.wheel {
+  width: 300px;
+  height: 300px;
+  flex-shrink: 0;               /* Prevent squashing in flex layouts */
+  border-radius: 50%;
+  position: relative;
+  border: 4px solid #45a29e;
+  box-shadow: 0 0 30px rgba(69, 162, 158, 0.5);
+  overflow: hidden;
+  background: #1f2833;          /* Fallback if conic-gradient not supported */
+}
+
+.segment-label {
+  position: absolute;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.pointer {
+  position: absolute;
+  width: 3px;
+  height: 50%;
+  background: linear-gradient(to top, #f39c12, #e74c3c);
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  z-index: 3;
+  border-radius: 2px;
+  margin-left: -1.5px;          /* Center the 3px width exactly */
+}
+
+.pointer::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 14px solid #e74c3c;
+}
+
+.spin-btn {
+  background: #f39c12;
+  color: #0b0c10;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: all 0.3s ease;
+}
+
+.spin-btn:hover:not(:disabled) {
+  background: #e67e22;
+  box-shadow: 0 0 30px rgba(243, 156, 18, 0.8);
+  transform: scale(1.05);
+}
+
+.spin-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -1,0 +1,162 @@
+.spin-page {
+  text-align: center;
+  width: 100%;
+}
+
+.spin-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f0c040;
+  text-shadow: 0 0 10px rgba(240, 192, 64, 0.3);
+}
+
+.wheel-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 2rem;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 5px solid #45a29e;
+  box-shadow: 0 0 30px rgba(69, 162, 158, 0.5);
+}
+
+.segment {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  left: 50%;
+  transform-origin: 0% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+.segment:nth-child(even) {
+  clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%); /* fallback, but segments are drawn via transform rotation */
+}
+
+.segment-label {
+  position: absolute;
+  left: 20%;
+  top: 35%;
+  transform: rotate(90deg);
+  white-space: nowrap;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+}
+
+.spin-btn {
+  margin-top: 2rem;
+  background: #f39c12;
+  color: #0b0c10;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.spin-btn:hover:not(:disabled) {
+  background: #e67e22;
+  box-shadow: 0 0 30px rgba(243, 156, 18, 0.8);
+  transform: scale(1.05);
+}
+
+.spin-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spin-result {
+  animation: fadeIn 0.5s ease;
+}
+
+.spin-result h2 {
+  font-size: 2rem;
+  color: #2ecc71;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+}
+
+.spin-result img {
+  width: 200px;
+  margin: 0 auto 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+.get-gift-btn {
+  background: #45a29e;
+  color: #0b0c10;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.get-gift-btn:hover {
+  background: #66fcf1;
+  box-shadow: 0 0 25px rgba(102, 252, 241, 0.6);
+}
+
+/* Trophy overlay */
+.trophy-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.trophy-animation {
+  text-align: center;
+  animation: bounceIn 0.5s ease;
+}
+
+.trophy-animation span {
+  font-size: 6rem;
+  display: block;
+  filter: drop-shadow(0 0 20px gold);
+}
+
+.trophy-animation h2 {
+  color: #f1c40f;
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  text-shadow: 0 0 20px rgba(241, 196, 15, 0.7);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}

@@ -1,0 +1,81 @@
+.home-page {
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('../../assets/img1.png');   /* relative path from this CSS file */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f0c040;
+  text-shadow: 0 0 10px rgba(240, 192, 64, 0.3);
+}
+
+.number-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.number-btn {
+  background: #1f2833;
+  border: 2px solid #45a29e;
+  color: #c5c6c7;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.8rem 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.number-btn:hover {
+  background: #45a29e;
+  color: #0b0c10;
+  border-color: #66fcf1;
+  box-shadow: 0 0 15px rgba(102, 252, 241, 0.5);
+  transform: scale(1.05);
+}
+
+.number-btn.selected {
+  background: #f39c12;
+  border-color: #f1c40f;
+  color: #0b0c10;
+  box-shadow: 0 0 20px rgba(243, 156, 18, 0.8);
+}
+
+.start-btn {
+  background: #45a29e;
+  color: #0b0c10;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.start-btn:hover:not(:disabled) {
+  background: #66fcf1;
+  box-shadow: 0 0 25px rgba(102, 252, 241, 0.6);
+  transform: translateY(-2px);
+}
+
+.start-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
