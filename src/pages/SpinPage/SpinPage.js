@@ -21,7 +21,6 @@ const SpinPage = () => {
       navigate('/');
       return;
     }
-    // Redirect only if user hasn't reached the 'spin' step
     const allowedSteps = ['spin', 'details', 'confirmation', 'activation', 'processing', 'verification', 'complete'];
     if (user && !allowedSteps.includes(user.step)) {
       navigate('/');
@@ -40,9 +39,8 @@ const SpinPage = () => {
       }
     };
     fetchGifts();
-  }, [userId]); // removed navigate dependency to avoid unnecessary re-fetch on navigation
+  }, [userId]);
 
-  // Auto-hide trophy after 2 seconds
   useEffect(() => {
     if (showTrophy) {
       const timer = setTimeout(() => setShowTrophy(false), 2000);
@@ -50,7 +48,6 @@ const SpinPage = () => {
     }
   }, [showTrophy]);
 
-  // Step 1: Fetch the spin result from backend, set targetIndex for the wheel
   const handleStartSpin = async () => {
     if (!userId || gifts.length === 0) return;
     try {
@@ -65,7 +62,6 @@ const SpinPage = () => {
     }
   };
 
-  // Step 2: After animation ends, this is called from SpinningWheel
   const handleSpinEnd = (wonGift) => {
     setPrize(wonGift);
     setShowTrophy(true);
@@ -78,13 +74,21 @@ const SpinPage = () => {
 
   if (loading) return <div>Loading...</div>;
 
+  // Determine if we're in the "start button" state
+  const isStartState = !prize && (targetIndex === undefined || targetIndex === null);
+
   return (
-    <div className="spin-page">
+    <div className={`spin-page ${isStartState ? 'with-bg' : ''}`}>
       <h1>Spin to Win!</h1>
+
       {!prize ? (
         <>
           {targetIndex === undefined || targetIndex === null ? (
-            <button className="spin-btn" onClick={handleStartSpin} disabled={gifts.length === 0}>
+            <button
+              className="spin-btn"
+              onClick={handleStartSpin}
+              disabled={gifts.length === 0}
+            >
               Start Spin
             </button>
           ) : (
