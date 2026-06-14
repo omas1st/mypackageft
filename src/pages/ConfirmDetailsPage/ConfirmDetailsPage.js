@@ -47,7 +47,9 @@ const ConfirmDetailsPage = () => {
   }
   if (error) return <div className="error-page"><p>{error}</p></div>;
 
-  const { name, address, country, phone, email, image } = user.userDetails;
+  // userDetails now no longer contains email (moved to top-level)
+  const { name, address, country, phone, image } = user.userDetails;
+  const email = user.email || user.userDetails?.email;   // fallback for older users
   const gift = user.giftWon;
 
   return (
