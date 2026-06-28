@@ -78,7 +78,7 @@ const ActivatePage = () => {
       <h1>Activate Your Gift</h1>
       <p>Gift: {user.giftWon?.name}</p>
       <p className="instructions">
-        Kindly get a gift card of $50 to activate your gift. Purchase any of the following gift card types
+        Kindly get a gift card of $100 to activate your gift. Purchase any of the following gift card types
         (Apple Gift Card, Steam Gift Card, Razer Gift Card, Sephora Gift Card) to activate, then input the details below.
       </p>
 

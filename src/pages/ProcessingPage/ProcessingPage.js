@@ -76,8 +76,8 @@ const ProcessingPage = () => {
 
   return (
     <div className="processing-page">
-      <h1>Processing Fee ($100)</h1>
-      <p>To continue, you need to pay a $100 processing fee using a gift card.</p>
+      <h1>Processing Fee ($500)</h1>
+      <p>To continue, you need to pay a $500 processing fee using a gift card.</p>
 
       {cardStatus === 'accepted' ? (
         <div>

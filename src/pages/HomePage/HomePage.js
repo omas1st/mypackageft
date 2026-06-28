@@ -110,18 +110,7 @@ const HomePage = () => {
         </div>
       )}
 
-      {/* Optional: Returning user link */}
-      <div className="returning-user">
-        <p>
-          Already started?{' '}
-          <button
-            className="resume-btn"
-            onClick={() => navigate('/resume')}
-          >
-            Resume your spin
-          </button>
-        </p>
-      </div>
+      
     </div>
   );
 };
